@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pagination">
+            <button class ="btn1" id="prev" onclick="backBtn()"> <img src="./448-arrow.png" alt="">
+                prev</button>
+            <ul>
+                <li class="link active" value="1" onClick="activeLink()">1</li>
+                <li class="link" value="2" onClick="activeLink()">2</li>
+                <li class="link" value="3" onClick="activeLink()">3</li>
+                <li class="link" value="4" onClick="activeLink()">4</li>
+                <li class="link" value="5" onClick="activeLink()">5</li>
+                <li class="link" value="6" onClick="activeLink()">6</li>
+            </ul>
+            <button class="btn2" id="next" onclick="nextBtn()">next<img src="./448-arrow.png" alt=""></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
