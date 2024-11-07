@@ -10,7 +10,16 @@ let sixth = document.getElementById("sixth");
 let currentvalue = 1;
 
 // Simulate a large dataset
-const data = Array.from({ length: 100 }, (_, i) => `Person ${i + 1}`);
+const data = [
+    "Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella", "Oliver", "Sophia",
+    "Benjamin", "Charlotte", "Elijah", "Amelia", "Lucas", "Mia", "Mason", "Harper", "Logan", "Evelyn",
+    "Alexander", "Abigail", "Ethan", "Emily", "Jacob", "Ella", "Michael", "Avery", "Daniel", "Scarlett",
+    "Henry", "Grace", "Jackson", "Chloe", "Sebastian", "Lily", "Aiden", "Sofia", "Matthew", "Madison",
+    "Samuel", "Aria", "David", "Aubrey", "Joseph", "Zoe", "Carter", "Hannah", "Owen", "Luna",
+    "Wyatt", "Layla", "John", "Ellie", "Jack", "Nora", "Luke", "Riley", "Jayden", "Lillian",
+    "Dylan", "Addison", "Levi", "Willow", "Isaac", "Lucy", "Gabriel"
+];
+
 
 function activeLink() {
     for (let l of link) {
@@ -61,7 +70,7 @@ function displayData() {
     const pageData = data.slice(startIndex, endIndex);
 
     const container = document.querySelector('.data-container');
-    container.innerHTML = pageData.map(item => `<ul><li>${item}</li></ul>`).join('');
+    container.innerHTML = pageData.map((item,index) => `<p>${startIndex+index+1}.${item}</p>`).join('');
 }
 
 function updateActiveLink() {
