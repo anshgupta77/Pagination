@@ -9,6 +9,7 @@
     height: 100vh;
     background: linear-gradient(45deg, #410358,#4700bc);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -23,7 +24,7 @@
 ul{
     margin: 20px 30px;
 }
-ul li{
+.link{
     display: inline-block;
     margin: 0 10px;
     /* background: #ccc; */
