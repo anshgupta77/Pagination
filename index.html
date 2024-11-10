@@ -1,3 +1,30 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pagination" id="pagination">
+            <button class="btn1" id="prev" onclick="backBtn()">
+                <img src="./448-arrow.png" alt=""> prev
+            </button>
+            <ul>
+            </ul>
+            <button class="btn2" id="next" onclick="nextBtn()">
+                next <img src="./448-arrow.png" alt="">
+            </button>
+        </div>
+        Container to display the current page's data 
+        <div class="data-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+<!--snippet2-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,19 +39,23 @@
             <button class="btn1" id="prev" onclick="backBtn()">
                 <img src="./448-arrow.png" alt=""> prev
             </button>
-            <ul>
-                <li class="link active" value="1" onclick="activeLink()" id="first">1</li>
+            <ul class="pagination-list" id="pagination-list">
+                <!-- <li class="link active" value="1" onclick="activeLink()" id="first">1</li>
                 <li class="link" value="2" onclick="activeLink()" id="second">2</li>
                 <li class="link" value="3" onclick="activeLink()" id="third">3</li>
                 <li class="link" value="4" onclick="activeLink()" id="fourth">4</li>
                 <li class="link" value="5" onclick="activeLink()" id="fifth">5</li>
-                <li class="link" value="6" onclick="activeLink()" id="sixth">6</li>
+                <li class="link" value="6" onclick="activeLink()" id="sixth">6</li> -->
+                <!-- <li class="link active" onclick="activeLink()">1</li>
+                <li class="link " onclick="activeLink()">2</li>
+                <li class="link " onclick="activeLink()">3</li>
+                <li class="link " onclick="activeLink()">.....</li>
+                <li class="link " onclick="activeLink()">20</li> -->
             </ul>
             <button class="btn2" id="next" onclick="nextBtn()">
                 next <img src="./448-arrow.png" alt="">
             </button>
         </div>
-        <!-- Container to display the current page's data -->
         <div class="data-container"></div>
     </div>
     <script src="script.js"></script>
