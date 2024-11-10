@@ -12,13 +12,6 @@ let fifth = document.getElementById('fifth');
 let sixth = document.getElementById("sixth");
 let paginationList = document.getElementById("pagination-list");
 let currentvalue = 1;
-paginationList.innerHTML = `
-<li class="link active" onclick="activeLink()">1</li>
-<li class="link " onclick="activeLink()">2</li>
-<li class="link " onclick="activeLink()">3</li>
-<li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">20</li>`;
-let link = document.querySelectorAll('.link');
 // Simulate a large dataset
 const data = [
     "Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella", "Oliver", "Sophia",
@@ -30,22 +23,17 @@ const data = [
     "Dylan", "Addison", "Levi", "Willow", "Isaac", "Lucy", "Gabriel",
     "Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella", "Oliver", "Sophia",
     "Benjamin", "Charlotte", "Elijah", "Amelia", "Lucas", "Mia", "Mason", "Harper", "Logan", "Evelyn",
-    "Alexander", "Abigail", "Ethan", "Emily", "Jacob", "Ella", "Michael", "Avery", "Daniel", "Scarlett",
-    "Henry", "Grace", "Jackson", "Chloe", "Sebastian", "Lily", "Aiden", "Sofia", "Matthew", "Madison",
-    "Samuel", "Aria", "David", "Aubrey", "Joseph", "Zoe", "Carter", "Hannah", "Owen", "Luna",
-    "Wyatt", "Layla", "John", "Ellie", "Jack", "Nora", "Luke", "Riley", "Jayden", "Lillian",
-    "Dylan", "Addison", "Levi", "Willow", "Isaac", "Lucy", "Gabriel",
     "Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella", "Oliver", "Sophia",
-    "Benjamin", "Charlotte", "Elijah", "Amelia", "Lucas", "Mia", "Mason", "Harper", "Logan", "Evelyn",
-    "Alexander", "Abigail", "Ethan", "Emily", "Jacob", "Ella", "Michael", "Avery", "Daniel", "Scarlett",
-    "Henry", "Grace", "Jackson", "Chloe", "Sebastian", "Lily", "Aiden", "Sofia", "Matthew", "Madison",
-    "Benjamin", "Charlotte", "Elijah", "Amelia", "Lucas", "Mia", "Mason", "Harper", "Logan", "Evelyn",
-    "Alexander", "Abigail", "Ethan", "Emily", "Jacob", "Ella", "Michael", "Avery", "Daniel", "Scarlett",
-    "Henry", "Grace", "Jackson"
-
+    "Benjamin"
 ];
 
-
+paginationList.innerHTML = `
+<li class="link active" onclick="activeLink()">1</li>
+<li class="link " onclick="activeLink()">2</li>
+<li class="link " onclick="activeLink()">3</li>
+<li class="link " onclick="activeLink()">.....</li>
+<li class="link " onclick="activeLink()">${Math.ceil(data.length / 10)}</li>`;
+let link = document.querySelectorAll('.link');
 function activeLink() {
     for (let l of link) {
         l.classList.remove('active');
@@ -63,7 +51,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">2</li>
 <li class="link " onclick="activeLink()">3</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">20</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
     }
     else if (currentvalue == 2) {
         paginationList.innerHTML = `
@@ -72,7 +60,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">3</li>
 <li class="link " onclick="activeLink()">4</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">20</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
     }
     else if (currentvalue == 3) {
         paginationList.innerHTML = `
@@ -82,9 +70,9 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">${currentvalue+1}</li>
 <li class="link " onclick="activeLink()">${currentvalue+2}</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">20</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
     }
-    else if (currentvalue > 3 && currentvalue < 18) {
+    else if (currentvalue > 3 && currentvalue < (Math.ceil(data.length / 10)-2)) {
         paginationList.innerHTML = `
         <li class="link " onclick="activeLink()">1</li>
         <li class="link " onclick="activeLink()">.....</li>
@@ -94,9 +82,9 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">${currentvalue+1}</li>
 <li class="link " onclick="activeLink()">${currentvalue+2}</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">20</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
     }
-    else if (currentvalue == 18) {
+    else if (currentvalue == (Math.ceil(data.length / 10)-2)) {
         paginationList.innerHTML = `
 <li class="link " onclick="activeLink()">1</li>
 <li class="link " onclick="activeLink()">.....</li>
@@ -106,7 +94,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">${currentvalue+1}</li>
 <li class="link " onclick="activeLink()">${currentvalue+2}</li>`
     }
-    else if (currentvalue == 19) {
+    else if (currentvalue == (Math.ceil(data.length / 10)-1)) {
         paginationList.innerHTML = `
 <li class="link " onclick="activeLink()">1</li>
 <li class="link " onclick="activeLink()">.....</li>
@@ -179,54 +167,3 @@ function styleBtn() {
 displayData();
 styleBtn();
 
-// snippet1
-// let link = document.querySelectorAll('.link');
-// let prev = document.getElementById('prev');
-// let next = document.getElementById('next');
-// let currentvalue=1;
- 
-// function activeLink(){
-//     // console.log("helloo");
-    
-//     for(l of link){
-//         l.classList.remove('active');
-//     }
-//     event.target.classList.add('active');
-//     currentvalue = event.target.value;
-//     styleBtn();
-// }
-// function backBtn(){
-//     console.log(currentvalue);
-    
-//     if(currentvalue > 1){
-//         for(l of link){
-//             l.classList.remove("active");
-//         }
-//         currentvalue--;
-//         styleBtn();
-//         link[currentvalue-1].classList.add("active");
-//     }
-// }
-// function nextBtn(){
-//     console.log(currentvalue);
-//     if(currentvalue < 6){
-//         for(l of link){
-//             l.classList.remove("active");
-//         }
-//         currentvalue++;
-//         styleBtn();
-//         link[currentvalue-1].classList.add("active");
-//     }
-// }
-// function styleBtn(){
-//     if(currentvalue == 1){
-//         prev.style.display = "none";
-//     }else{
-//         prev.style.display = "inline";
-//     }
-//     if(currentvalue == 6){
-//         next.style.display = "none";
-//     }else{
-//         next.style.display = "inline";
-//     }
-// }
