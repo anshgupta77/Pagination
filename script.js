@@ -51,7 +51,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">2</li>
 <li class="link " onclick="activeLink()">3</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10))}</li>`
     }
     else if (currentvalue == 2) {
         paginationList.innerHTML = `
@@ -60,7 +60,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">3</li>
 <li class="link " onclick="activeLink()">4</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10))}</li>`
     }
     else if (currentvalue == 3) {
         paginationList.innerHTML = `
@@ -72,7 +72,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">.....</li>
 <li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
     }
-    else if (currentvalue > 3 && currentvalue < (Math.ceil(data.length / 10)-2)) {
+    else if (currentvalue > 3 && currentvalue < (Math.ceil(data.length / 10))) {
         paginationList.innerHTML = `
         <li class="link " onclick="activeLink()">1</li>
         <li class="link " onclick="activeLink()">.....</li>
@@ -82,7 +82,7 @@ function displayPagination() {
 <li class="link " onclick="activeLink()">${currentvalue+1}</li>
 <li class="link " onclick="activeLink()">${currentvalue+2}</li>
 <li class="link " onclick="activeLink()">.....</li>
-<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10)-2)}</li>`
+<li class="link " onclick="activeLink()">${(Math.ceil(data.length / 10))}</li>`
     }
     else if (currentvalue == (Math.ceil(data.length / 10)-2)) {
         paginationList.innerHTML = `
